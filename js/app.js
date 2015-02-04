@@ -63,7 +63,7 @@ stopwatchApp.controller('stopwatchCtrl', function($scope) {
         $scope.timerInterval = null;
         $scope.startTime = null;
         $scope.isRunning = false;
-        $scope.lapCounter = 0;
+        $scope.lapList = [];
 
         $scope.timer = {
             hours: '00',
