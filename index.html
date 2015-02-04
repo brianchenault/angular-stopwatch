@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Stopwatch</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+</head>
+<body>
+    <div ng-app="stopwatchApp">
+        <div id="main" ng-controller="stopwatchCtrl" ng-cloak>
+            <div class="display">
+                <div id="hours" class="unit">{{ timer.hours }}</div> :
+                <div id="minutes" class="unit">{{ timer.minutes }}</div> :
+                <div id="seconds" class="unit">{{ timer.seconds }}</div> :
+                <div id="ms" class="unit">{{ timer.ms }}</div>
+            </div>
+            <div class="buttons">
+                <div id="start" class="button" ng-click="onStartClick()">Start</div>
+                <div id="stop" class="button" ng-click="onStopClick()">Stop</div>
+                <div id="lap" class="button" ng-click="onLapClick()">Lap</div>
+                <div id="reset" class="button" ng-click="onResetClick()">Reset</div>
+            </div>
+            <div id="lapList">
+                <div ng-repeat="lap in lapList" class="lap">
+                   <span>{{ lap.position }}</span> {{ lap.time }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="dist/app.js"></script>
+</body>
+</html>
